@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Verification</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .loader, .verified {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 1s ease;
+    }
+
+    .loader {
+      opacity: 1;
+    }
+
+    .verified {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    .spinner {
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .tick-mark {
+      width: 120px;
+      height: 120px;
+      stroke: #2ecc71;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      animation: draw 1s ease forwards;
+      margin-bottom: 20px;
+    }
+
+    @keyframes draw {
+      from {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .cta {
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: white;
+      color: #2c3e50;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta:hover {
+      background: #2ecc71;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <h1>Verifying your product...</h1>
+    <p>Please wait while we confirm authenticity</p>
+  </div>
+
+  <div class="verified" id="verified">
+    <svg class="tick-mark" viewBox="0 0 52 52">
+      <path d="M14 27l10 10 18-20" />
+    </svg>
+    <h1>Your product is 100% Genuine and Verified ✅</h1>
+    <p>Thank you for choosing trusted products.</p>
+    <a href="#" class="cta">Go to Dashboard</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loader').style.opacity = '0';
+      document.getElementById('verified').style.opacity = '1';
+      document.getElementById('verified').style.transform = 'scale(1)';
+    }, 3000); // simulate loading time
+  </script>
+
+</body>
+</html>
