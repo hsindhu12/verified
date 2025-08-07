@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Product Verification</title>
+  <title>Product Verification - 13Lives</title>
   <style>
     * {
       margin: 0;
@@ -14,7 +14,7 @@
     body, html {
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #2c3e50, #3498db);
+      background: #000; /* Dark background */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -41,8 +41,8 @@
     }
 
     .spinner {
-      border: 6px solid rgba(255, 255, 255, 0.3);
-      border-top: 6px solid white;
+      border: 6px solid rgba(255, 255, 255, 0.2);
+      border-top: 6px solid #f5c518; /* Gold-yellow spinner */
       border-radius: 50%;
       width: 60px;
       height: 60px;
@@ -59,7 +59,7 @@
     .tick-mark {
       width: 120px;
       height: 120px;
-      stroke: #2ecc71;
+      stroke: #f5c518;
       stroke-width: 8;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -91,8 +91,8 @@
     .cta {
       margin-top: 30px;
       padding: 12px 28px;
-      background: white;
-      color: #2c3e50;
+      background: #f5c518;
+      color: #000;
       border-radius: 30px;
       font-weight: bold;
       text-decoration: none;
@@ -100,26 +100,33 @@
     }
 
     .cta:hover {
-      background: #2ecc71;
-      color: white;
+      background: white;
+      color: #000;
+    }
+
+    .logo {
+      max-width: 140px;
+      margin-bottom: 30px;
     }
   </style>
 </head>
 <body>
 
   <div class="loader" id="loader">
+    <img src="https://13lives.com/wp-content/uploads/2023/12/13lives-Logo.png" alt="13Lives Logo" class="logo">
     <div class="spinner"></div>
     <h1>Verifying your product...</h1>
     <p>Please wait while we confirm authenticity</p>
   </div>
 
   <div class="verified" id="verified">
+    <img src="https://13lives.com/wp-content/uploads/2023/12/13lives-Logo.png" alt="13Lives Logo" class="logo">
     <svg class="tick-mark" viewBox="0 0 52 52">
       <path d="M14 27l10 10 18-20" />
     </svg>
     <h1>Your product is 100% Genuine and Verified ✅</h1>
-    <p>Thank you for choosing trusted products.</p>
-    <a href="#" class="cta">Go to Dashboard</a>
+    <p>Thank you for trusting 13Lives.</p>
+    <a href="https://13lives.com" class="cta">Go to Dashboard</a>
   </div>
 
   <script>
